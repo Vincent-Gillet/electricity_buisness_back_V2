@@ -1,0 +1,238 @@
+### Récupérer la liste des utilisateurs
+GET http://localhost:8080/api/utilisateurs
+
+### Récupérer un utilisateur par son ID
+GET http://localhost:8080/api/utilisateurs/1
+
+### Créer un nouvel utilisateur
+POST http://localhost:8080/api/utilisateurs
+Content-Type: application/json
+
+{
+/*
+  "id": "1L",
+*/
+  "utilisateurNom": "Doe",
+  "prenom": "John",
+  "pseudo": "john",
+  "utilisateurEmail": "john@gmail.com",
+  "utilisateurMotDePasse": "azerty",
+  "dateDeNaissance": "2002-01-01"
+}
+
+/*
+1L,
+"Doe",
+"John",
+"john_deo",
+"johndeo@gmail.com",
+"password",
+RoleUtilisateurEnum.UTILISATEUR,
+LocalDate.parse("2002-01-01"),
+"FR4730003000301731589138L36",
+false,
+null,
+null,
+null);*/
+
+
+### Mettre à jour un utilisateur par son ID
+PUT http://localhost:8080/utilisateurs/1
+Content-Type: application/json
+
+{
+  "utilisateurNom": "Doe",
+  "prenom": "John",
+  "pseudo": "johndeo_updated",
+  "utilisateurEmail": "johndeo@gmail.com",
+  "utilisateurMotDePasse": "new_password",
+  "dateDeNaissance": "2002-01-01"
+}
+
+### Supprimer un utilisateur par son ID
+DELETE http://127.0.0.1:8080/api/utilisateurs/1
+
+
+### Récupérer la liste des bornes
+GET http://localhost:8080/api/bornes
+
+### Récupérer une borne par son ID
+GET http://localhost:8080/bornes/1
+
+### Créer une nouvelle borne
+POST http://localhost:8080/bornes
+Content-Type: application/json
+
+{
+  "nomBorne": "Borne 1",
+  "latitude": 48.8566,
+  "longitude": 2.3522,
+  "tarif": 1.22,
+  "puissance": 21,
+  "instruction" : "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "surPied" : false,
+  "etatBorne": "EN_PANNE"
+}
+
+### Mettre à jour une borne par son ID
+PUT http://localhost:8080/bornes/1
+Content-Type: application/json
+
+{
+  "nomBorne": "Borne 1 Updated",
+  "latitude": 48.8566,
+  "longitude": 2.3522,
+  "tarif": 1.50,
+  "puissance": 22,
+  "instruction" : "updated instruction",
+  "surPied" : true,
+  "etatBorne": "LIBRE"
+}
+
+### Supprimer une borne par son ID
+DELETE http://localhost:8080/bornes/1
+
+
+### Récupérer la liste des adresses
+GET http://localhost:8080/adresses
+
+### Récupérer un adresse par son ID
+GET http://localhost:8080/adresses/1
+
+### Créer un nouvel adresse
+POST http://localhost:8080/adresses
+Content-Type: application/json
+
+{
+  "nomAdresse": "Doe",
+  "adresse": "123 Main St",
+  "codePostal": "75001",
+  "ville": "Paris",
+  "pays": "azerty",
+  "region": "2002-01-01",
+  "complement": "Apt 4B",
+  "etage": 2
+}
+
+### Mettre à jour un adresse par son ID
+
+PUT http://localhost:8080/adresses/1
+Content-Type: application/json
+
+{
+  "nomAdresse": "Doe Updated",
+  "adresse": "456 Elm St",
+  "codePostal": "69002",
+  "ville": "Lyon",
+  "pays": "azerty",
+  "region": "2002-01-01",
+  "complement": "Apt 4B",
+  "etage": 2
+}
+
+### Supprimer un adresse par son ID
+DELETE http://localhost:8080/adresses/1
+
+
+### Récupérer la liste des lieux
+GET http://localhost:8080/lieux
+
+### Récupérer un lieu par son ID
+GET http://localhost:8080/lieux/1
+
+### Créer un nouveau lieu
+POST http://localhost:8080/lieux
+Content-Type: application/json
+
+{
+  "lieuNom": "Parc Central",
+  "lieuDescription": "Un parc au centre de la ville.",
+  "adresseId": 1,
+  "utilisateurId": 1
+}
+
+### Mettre à jour un lieu par son ID
+PUT http://localhost:8080/lieux/1
+Content-Type: application/json
+
+{
+  "lieuNom": "Parc Central Updated",
+  "lieuDescription": "Un parc au centre de la ville, mis à jour.",
+  "adresseId": 1,
+  "utilisateurId": 1
+}
+
+### Supprimer un lieu par son ID
+DELETE http://localhost:8080/lieux/1
+
+
+### Récupérer la liste des vehicules
+GET http://localhost:8080/vehicules
+
+### Récupérer un vehicule par son ID
+GET http://localhost:8080/vehicules/1
+
+### Créer un nouveau vehicule
+POST http://localhost:8080/vehicules
+Content-Type: application/json
+
+{
+  "marque": "Tesla",
+  "modele": "Model",
+  "annee": 2019,
+  "plaqueImmatriculation": "AB123CD",
+  "utilisateurId": 1
+}
+
+### Mettre à jour un vehicule par son ID
+PUT http://localhost:8080/vehicules/1
+Content-Type: application/json
+
+{
+  "marque": "Tesla",
+  "modele": "Model S Plaid",
+  "annee": 2021,
+  "immatriculation": "AB-123-CD",
+  "utilisateurId": 1
+}
+
+### Supprimer un vehicule par son ID
+DELETE http://localhost:8080/servicesup/1
+
+
+### Récupérer la liste des servies supplémentaires
+GET http://localhost:8080/servicesup
+
+### Récupérer un servie supplémentaire par son ID
+GET http://localhost:8080/servicesup/1
+
+### Créer un nouveau servie supplémentaire
+POST http://localhost:8080/servicesup
+Content-Type: application/json
+
+{
+  "nomServiceSup": "Nettoyage",
+  "descriptionServiceSup": "Service de nettoyage du véhicule.",
+  "tarifServiceSup": 15.00
+}
+
+### Mettre à jour un servie supplémentaire par son ID
+PUT http://localhost:8080/servicesup/1
+Content-Type: application/json
+
+{
+  "serviceNom": "Nettoyage Intérieur",
+  "serviceDescription": "Service de nettoyage intérieur du véhicule.",
+  "tarif": 20.00
+}
+
+### Supprimer un servie supplémentaire par son ID
+DELETE http://localhost:8080/servicesup/1
+
+
+### Récupérer la liste des réservations
+
+
+
+### API véhicule electrique
+GET https://public.opendatasoft.com//api/explore/v2.1/catalog/datasets/all-vehicles-model/records?limit=20&refine=fueltype1%3A%22Electricity%22
