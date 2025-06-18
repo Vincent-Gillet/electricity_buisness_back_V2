@@ -65,7 +65,10 @@ DELETE http://127.0.0.1:8080/api/utilisateurs/1
 
 
 ### Récupérer la liste des bornes
+
 GET http://localhost:8080/api/bornes
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFubWFydGluQGdtYWlsLmNvbSIsImlhdCI6MTc1MDI1NjQ4NiwiZXhwIjoxNzUwMjU3MDg2fQ.t9nDmgNmz23-B3Q3Hb8flxwigf3nLkNcrwaIoxLprDM
+
 
 ### Récupérer une borne par son ID
 GET http://localhost:8080/bornes/1

@@ -16,8 +16,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    @Value("${jwt.secret}")
-    private String secretKey;
+    private static final String SECRET_KEY = "XUqxkJb4qOq+lOKhO3rdM5CkwD+WkCvQ2HYOcsF6bLQ=";
 
     private static final long EXPIRATION_TIME = 1000 * 60 * 10;
 
@@ -39,7 +38,7 @@ public class JwtService {
      * Elle convertit la chaîne `SECRET_KEY` (en base64) en un objet `Key`.
      */
     private Key getSigningKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(secretKey);
+        byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
 
         return Keys.hmacShaKeyFor(keyBytes);
     }

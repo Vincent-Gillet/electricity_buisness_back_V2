@@ -125,9 +125,7 @@ public class SecurityConfig {
                             .requestMatchers(
                                     "/profile.html",
                                     "/api/adresses/**",
-                                        "/api/bornes/**",
-
-
+                                    "/api/bornes/**",
                                     "/api/lieux/**",
                                     "/api/medias/**",
                                     "/api/reservations/**",
