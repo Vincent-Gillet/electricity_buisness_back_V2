@@ -1,3 +1,15 @@
+### Récupérer la page d'accueil
+GET http://localhost:8080/
+
+### Connexion d'un utilisateur existant
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "utilisateurEmail": "jeanmartin@gmail.com",
+  "utilisateurMotDePasse": "azerty"
+}
+
 ### Récupérer la liste des utilisateurs
 GET http://localhost:8080/api/utilisateurs
 
@@ -8,36 +20,35 @@ GET http://localhost:8080/api/utilisateurs/1
 POST http://localhost:8080/api/utilisateurs
 Content-Type: application/json
 
-{
 /*
-  "id": "1L",
-*/
-  "utilisateurNom": "Doe",
-  "prenom": "John",
-  "pseudo": "john",
-  "utilisateurEmail": "john@gmail.com",
+{
+  "utilisateurNom": "Martin",
+  "prenom": "Jean",
+  "pseudo": "jeanmartin",
+  "role": "0",
   "utilisateurMotDePasse": "azerty",
-  "dateDeNaissance": "2002-01-01"
+  "utilisateurEmail": "jeanmartin@gmail.com",
+  "dateDeNaissance": "2008-03-06",
+  "iban": "FR4730003000301731589138L03",
+  "banni": false
+}*/
+
+
+### Créer un nouvel utilisateur avec valeur par défaut
+POST http://localhost:8080/api/utilisateurs
+Content-Type: application/json
+
+{
+  "utilisateurNom": "Martin",
+  "prenom": "Jean",
+  "pseudo": "jeanmartin",
+  "utilisateurMotDePasse": "azerty",
+  "utilisateurEmail": "jeanmartin@gmail.com",
+  "dateDeNaissance": "2008-03-06"
 }
 
-/*
-1L,
-"Doe",
-"John",
-"john_deo",
-"johndeo@gmail.com",
-"password",
-RoleUtilisateurEnum.UTILISATEUR,
-LocalDate.parse("2002-01-01"),
-"FR4730003000301731589138L36",
-false,
-null,
-null,
-null);*/
-
-
 ### Mettre à jour un utilisateur par son ID
-PUT http://localhost:8080/utilisateurs/1
+PUT http://localhost:8080/api/utilisateurs/1
 Content-Type: application/json
 
 {

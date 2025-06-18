@@ -3,6 +3,8 @@ package com.example.electricity_business_backend.mapper;
 import com.example.electricity_business_backend.dto.*;
 import com.example.electricity_business_backend.model.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,6 +13,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class EntityMapper {
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
 
     // === LIEU ===
     public LieuDTO toDTO(Lieu lieu) {
@@ -86,6 +92,42 @@ public class EntityMapper {
         utilisateur.setDateDeNaissance(dto.getDateDeNaissance());
         utilisateur.setIban(dto.getIban());
         utilisateur.setBanni(dto.getBanni());
+        return utilisateur;
+    }
+
+    // === UTILISATEUR CREATE ===
+
+    public UtilisateurCreateDTO toCreateDTO(Utilisateur utilisateur) {
+        if (utilisateur == null) return null;
+        return new UtilisateurCreateDTO(
+            utilisateur.getUtilisateurNom(),
+            utilisateur.getPrenom(),
+            utilisateur.getPseudo(),
+            utilisateur.getUtilisateurMotDePasse(),
+            utilisateur.getUtilisateurEmail(),
+            utilisateur.getDateDeNaissance()
+        );
+    }
+
+    public Utilisateur toEntity(UtilisateurCreateDTO dto) {
+        if (dto == null) return null;
+        Utilisateur utilisateur = new Utilisateur();
+        utilisateur.setUtilisateurNom(dto.getUtilisateurNom());
+        utilisateur.setPrenom(dto.getPrenom());
+        utilisateur.setPseudo(dto.getPseudo());
+/*
+        utilisateur.setRole(dto.getRole());
+*/
+        utilisateur.setRole(RoleUtilisateurEnum.UTILISATEUR);
+        utilisateur.setUtilisateurMotDePasse(passwordEncoder.encode(dto.getUtilisateurMotDePasse()));
+        utilisateur.setUtilisateurEmail(dto.getUtilisateurEmail());
+        utilisateur.setDateDeNaissance(dto.getDateDeNaissance());
+/*
+        utilisateur.setIban(dto.getIban());
+*/
+        utilisateur.setIban(null);
+        utilisateur.setBanni(false);
+
         return utilisateur;
     }
 

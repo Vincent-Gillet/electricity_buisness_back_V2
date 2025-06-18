@@ -1,5 +1,6 @@
 package com.example.electricity_business_backend.controller;
 
+import com.example.electricity_business_backend.dto.UtilisateurCreateDTO;
 import com.example.electricity_business_backend.dto.UtilisateurDTO;
 import com.example.electricity_business_backend.mapper.EntityMapper;
 import com.example.electricity_business_backend.model.Utilisateur;
@@ -59,12 +60,18 @@ public class UtilisateurController {
      * @return L'utilisateur créé avec un statut HTTP 201 Created
      */
     @PostMapping
-    public ResponseEntity<UtilisateurDTO> saveUtilisateur(@Valid @RequestBody UtilisateurDTO utilisateurDTO) {
+    public ResponseEntity<UtilisateurDTO> saveUtilisateur(@Valid @RequestBody UtilisateurCreateDTO utilisateurDTO) {
         Utilisateur utilisateur = mapper.toEntity(utilisateurDTO);
         Utilisateur savedUtilisateur = utilisateurService.saveUtilisateur(utilisateur);
         UtilisateurDTO savedDTO = mapper.toDTO(savedUtilisateur);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedDTO);
     }
+
+    /*    @PostMapping
+    public ResponseEntity<Utilisateur> saveUtilisateur(@Valid @RequestBody Utilisateur utilisateur) {
+        Utilisateur savedUtilisateur = utilisateurService.saveUtilisateur(utilisateur);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedUtilisateur);
+    }*/
 
     /**
      * Met à jour un utilisateur existant.

@@ -72,14 +72,5 @@ public class UtilisateurService {
     }
 
 
-/*    *//**
-     * Récupère un utilisateur par son adresse e-mail.
-     * @param adresseMail L'adresse e-mail de l'utilisateur à récupérer
-     * @return Un Optional contenant l'utilisateur si trouvé, sinon vide
-     *//*
-    @Transactional(readOnly = true)
-    public Optional<Utilisateur> getUtilisateurByAdresseMail(String adresseMail) {
-        return utilisateurRepository.findByAdresseMail(adresseMail);
-    }*/
 
 }
