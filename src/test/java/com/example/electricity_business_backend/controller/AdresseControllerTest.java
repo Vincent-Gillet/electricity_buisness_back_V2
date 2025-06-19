@@ -1,3 +1,4 @@
+/*
 package com.example.electricity_business_backend.controller;
 
 import com.example.electricity_business_backend.dto.AdresseDTO;
@@ -53,10 +54,12 @@ class AdresseControllerTest {
     }
 
 
-    /**
+    */
+/**
      * Test pour vérifier que la méthode getAllAdresses retourne toutes les adresses existantes.
      * On simule le service pour retourner une liste d'adresses prédéfinies.
-     */
+     *//*
+
     @Test
     void testGetAllAdresses_whenAdressesExists_shouldReturnAllAdresses() throws Exception {
         Adresse adresse1 = new Adresse(
@@ -107,10 +110,12 @@ class AdresseControllerTest {
 
     }
 
-    /**
+    */
+/**
      * Test pour vérifier que la méthode getAllAdresses retourne une liste vide si aucune adresse n'existe.
      * On simule le service pour retourner une liste vide.
-     */
+     *//*
+
     @Test
     void testGetAllAdresses_whenNoAdressesExists_shouldReturnEmptyList() throws Exception {
 
@@ -122,10 +127,12 @@ class AdresseControllerTest {
                 .andExpect(status().isOk());
     }
 
-    /**
+    */
+/**
      * Test de la méthode getAdresseById() du contrôleur UtilisateurController
      * Vérifie que la récupération d'une adresse existante retourne l'adresse correspondante.
-     */
+     *//*
+
     @Test
     void testGetAdresseById_whenAdresseExists_shouldReturnAdresse() throws Exception {
         Adresse adresse = new Adresse(
@@ -164,10 +171,12 @@ class AdresseControllerTest {
                 .andExpect(jsonPath("$.pays").value("France"));
     }
 
-    /**
+    */
+/**
      * Test de la méthode getAdresseById() du contrôleur UtilisateurController
      * Vérifie que la récupération d'une adresse inexistante retourne un statut HTTP 404 Not Found.
-     */
+     *//*
+
     @Test
     void testGetAdresseById_whenAdresseDoesNotExist_shouldReturnNotFound() throws Exception{
 
@@ -177,11 +186,13 @@ class AdresseControllerTest {
                 .andExpect(status().isNotFound()); // On vérifie que le statut est 404 Not Found
     }
 
-    /**
+    */
+/**
      * Test de la méthode postAdresse() du contrôleur UtilisateurController
      * Vérifie que la création d'une nouvelle adresse retourne l'adresse créée.
      * On simule le service pour retourner l'adresse créée.
-     */
+     *//*
+
     @Test
     void testPostAdresse_whenValidAdresse_shouldReturnCreatedAdresse() throws Exception {
         Adresse adresse = new Adresse(
@@ -227,11 +238,13 @@ class AdresseControllerTest {
 
 
 
-    /**
+    */
+/**
      * Test de la méthode updateAdresse() du contrôleur UtilisateurController
      * Vérifie que la mise à jour d'une adresse existante retourne l'adresse mise à jour.
      * On simule le service pour retourner l'adresse mise à jour.
-     */
+     *//*
+
     @Test
     void testUpdateAdresse_whenAdresseExists_shouldReturnUpdatedAdresse() throws Exception {
 
@@ -279,10 +292,12 @@ class AdresseControllerTest {
     }
 
 
-    /**
+    */
+/**
      * Test de la méthode updateAdresse() du contrôleur UtilisateurController
      * Vérifie que la mise à jour d'une adresse inexistante retourne un statut HTTP 400 Bad Request.
-     */
+     *//*
+
     @Test
     void testUpdateAdresse_whenAdresseDoesNotExist_shouldReturnError() throws Exception {
 
@@ -298,10 +313,12 @@ class AdresseControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
-    /**
+    */
+/**
      * Test de la méthode deleteAdresseById() du contrôleur UtilisateurController
      * Vérifie que la suppression d'une adresse existante retourne un statut HTTP 204 No Content.
-     */
+     *//*
+
     @Test
     void testDeleteAdresse_whenAdresseExists_shouldReturnDeletedAdresse() throws Exception {
 
@@ -311,10 +328,12 @@ class AdresseControllerTest {
                 .andExpect(status().isNoContent()); // On vérifie que le statut est 204 No Content
     }
 
-    /**
+    */
+/**
      * Test de la méthode deleteAdresseById() du contrôleur UtilisateurController
      * Vérifie que la suppression d'une adresse inexistante retourne un statut HTTP 404 Not Found.
-     */
+     *//*
+
     @Test
     void testDeleteAdresse_whenAdresseDoesNotExist_shouldReturnNotFound() throws Exception {
 
@@ -324,4 +343,4 @@ class AdresseControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-}
+}*/

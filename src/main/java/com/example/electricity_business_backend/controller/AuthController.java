@@ -29,7 +29,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<String> authenticate(@RequestBody AuthRequest request) {
 // On authentifie l'utilisateur avec le manager de Spring Security
-        try {
+/*        try {*/
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.utilisateurEmail(), request.utilisateurMotDePasse())
@@ -41,9 +41,9 @@ public class AuthController {
 
         return ResponseEntity.ok(jwt);
 
-            } catch (Exception e) {
+/*            } catch (Exception e) {
             return ResponseEntity.status(401).body("Authentication failed: " + e.getMessage());
-        }
+        }*/
     }
 
     record AuthRequest(String utilisateurEmail, String utilisateurMotDePasse) {}

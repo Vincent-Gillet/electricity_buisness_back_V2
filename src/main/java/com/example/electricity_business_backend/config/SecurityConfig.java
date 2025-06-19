@@ -101,13 +101,8 @@ public class SecurityConfig {
 
                     // Les admins peuvent accéder à tout ce qui commence par /api/adminisatrateur
                                 .requestMatchers(
-                                        "/api/administrateurs/**",
-                                        "/api/administrateurs",
-
+                                        "/api//*administrateurs*//**",
                                         "/api/bornes/**"
-/*
-                                        "/api/utilisateurs"
-*/
 
 
                     ).hasRole("ADMINISTRATEUR")
@@ -123,17 +118,13 @@ public class SecurityConfig {
 
                             // Les utilisateurs authentifiés peuvent voir les profils
                             .requestMatchers(
-                                    "/profile.html",
                                     "/api/adresses/**",
-                                    "/api/bornes/**",
                                     "/api/lieux/**",
                                     "/api/medias/**",
                                     "/api/reservations/**",
                                     "/api/services/**",
                                     "/api/vehicules/**"
-/*
-                                        "/api/utilisateurs/**"
-*/
+
 
 
                             ).authenticated()

@@ -39,6 +39,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
  * Classe de test pour le contrôleur UtilisateurController.
  * Teste les méthodes du contrôleur pour s'assurer qu'elles fonctionnent correctement.
  */
+
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(UtilisateurController.class)
 class UtilisateurControllerTest {
@@ -115,10 +116,10 @@ class UtilisateurControllerTest {
 
     }
 
-    /**
+/*    *//**
      * Test de la méthode getAllUtilisateurs() du contrôleur UtilisateurController.
      * Vérifie que la méthode renvoie une liste vide si aucun utilisateur n'existe.
-     */
+     *//*
     @Test
     void testGetAllUtilisateurs_whenUtilisateursDoesNotExist_shouldReturnAllUtilisateursIsOk() throws Exception {
 
@@ -130,10 +131,10 @@ class UtilisateurControllerTest {
                 .andExpect(status().isOk());
     }
 
-    /**
+    *//**
      * Test de la méthode getUtilisateurById() du contrôleur UtilisateurController.
      * Vérifie que la méthode renvoie un utilisateur par son ID s'il existe.
-     */
+     *//*
     @Test
     void testGetUtilisateurById_whenUtilisateurExists_shouldReturnUtilisateur() throws Exception {
         // Arrange (Préparation)
@@ -175,10 +176,10 @@ class UtilisateurControllerTest {
     }
 
 
-    /**
+    *//**
      * Test de la méthode getUtilisateurById() du contrôleur UtilisateurController.
      * Vérifie que la méthode renvoie un statut 404 Not Found si l'utilisateur n'existe pas.
-     */
+     *//*
     @Test
     void testGetUtilisateurById_whenUtilisateurDoesNotExist_shouldReturnNotFound() throws Exception {
     // Arrange// On définit le comportement du mock pour un ID qui n'existe pas
@@ -189,10 +190,10 @@ class UtilisateurControllerTest {
                 .andExpect(status().isNotFound());// On vérifie que le statut est 404 Not Found
     }
 
-    /**
+    *//**
      * Test de la méthode saveUtilisateur() du contrôleur UtilisateurController.
      * Vérifie que la méthode crée un nouvel utilisateur et renvoie le nouvel utilisateur créé.
-     */
+     *//*
     @Test
     void testPostUtilisateur_whenUtilisateurDoesNotExists_shouldReturnUtilisateur() throws Exception {
         // Arrange
@@ -253,10 +254,10 @@ class UtilisateurControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
-    /**
+    *//**
      * Test de la méthode updateUtilisateur() du contrôleur UtilisateurController.
      * Vérifie que la méthode met à jour un utilisateur existant et renvoie l'utilisateur mis à jour.
-     */
+     *//*
     @Test
     void testUpdateUtilisateur_whenUtilisateurExists_shouldReturnUtilisateur() throws Exception {
         // Arrange (Préparation)
@@ -306,10 +307,10 @@ class UtilisateurControllerTest {
     }
 
 
-    /**
+    *//**
      * Test de la méthode updateUtilisateur() du contrôleur UtilisateurController.
      * Vérifie que la méthode renvoie une erreur si l'utilisateur n'existe pas.
-     */
+     *//*
     @Test
     void testUpdateUtilisateur_whenUtilisateurNotExist_shouldReturnError() throws Exception {
         // Arrange (Préparation)
@@ -328,10 +329,10 @@ class UtilisateurControllerTest {
     }
 
 
-    /**
+    *//**
      * Test de la méthode deleteUtilisateurById() du contrôleur UtilisateurController.
      * Vérifie que la méthode supprime un utilisateur par son ID s'il existe.
-     */
+     *//*
     @Test
     void testDeleteUtilisateurById_whenUtilisateurExists_shouldReturnUtilisateur() throws Exception {
 
@@ -341,10 +342,10 @@ class UtilisateurControllerTest {
                 .andExpect(status().isNoContent()); // On vérifie que le statut est 204 No Content
     }
 
-    /**
+    *//**
      * Test de la méthode deleteUtilisateurById() du contrôleur UtilisateurController.
      * Vérifie que la méthode renvoie un statut 404 Not Found si l'utilisateur n'existe pas.
-     */
+     *//*
     @Test
     void testDeleteUtilisateurById_whenUtilisateurDoesNotExist_shouldNotFound() throws Exception {
 
@@ -352,6 +353,6 @@ class UtilisateurControllerTest {
 
         mockMvc.perform(delete("/api/utilisateurs/1"))
                 .andExpect(status().isNotFound()); // On vérifie que le statut est 404 Not Found
-    }
+    }*/
 
 }

@@ -16,14 +16,12 @@ public class Adresse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nom_adresse")
     @NotNull
     private String nomAdresse;
 
     @NotNull
     private String adresse;
 
-    @Column(name = "code_postal")
     @NotNull
     private String codePostal;
 
@@ -40,10 +38,8 @@ public class Adresse {
     private String etage;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_lieu")
     private Lieu lieu;
 
     @ManyToOne
-    @JoinColumn(name = "id_utilisateur")
     private Utilisateur utilisateur;
 }

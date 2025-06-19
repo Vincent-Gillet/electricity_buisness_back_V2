@@ -52,6 +52,7 @@ public class EntityMapper {
     public Adresse toEntity(AdresseDTO dto) {
         if (dto == null) return null;
         Adresse adresse = new Adresse();
+        adresse.setId(dto.getId());
         adresse.setNomAdresse(dto.getNomAdresse());
         adresse.setAdresse(dto.getAdresse());
         adresse.setCodePostal(dto.getCodePostal());

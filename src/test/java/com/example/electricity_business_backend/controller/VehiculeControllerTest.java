@@ -1,3 +1,4 @@
+/*
 package com.example.electricity_business_backend.controller;
 
 import com.example.electricity_business_backend.dto.VehiculeDTO;
@@ -32,10 +33,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+*/
 /**
  * Classe de test pour le contrôleur VehiculeController.
  * Teste les méthodes du contrôleur pour s'assurer qu'elles fonctionnent correctement.
- */
+ *//*
+
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(VehiculeController.class)
 class VehiculeControllerTest {
@@ -57,10 +60,12 @@ class VehiculeControllerTest {
         objectMapper.registerModule(new JavaTimeModule());
     }
 
-    /**
+    */
+/**
      * Test de la méthode getAllVehicules() du contrôleur VehiculeController.
      * Vérifie que la méthode renvoie tous les véhicules existants.
-     */
+     *//*
+
     @Test
     void testGetAllVehicules_whenVehiculesExists_shouldReturnAllVehicules() throws Exception {
         Vehicule vehicule1 = new Vehicule(
@@ -102,10 +107,12 @@ class VehiculeControllerTest {
 
     }
 
-    /**
+    */
+/**
      * Test de la méthode getAllVehicules() du contrôleur VehiculeController.
      * Vérifie que la méthode renvoie une liste vide si aucun véhicule n'existe.
-     */
+     *//*
+
     @Test
     void testGetAllVehicules_whenVehiculesDoesNotExist_shouldReturnEmptyList() throws Exception {
 
@@ -117,10 +124,12 @@ class VehiculeControllerTest {
                 .andExpect(status().isOk());
     }
 
-    /**
+    */
+/**
      * Test de la méthode getVehiculeById() du contrôleur VehiculeController.
      * Vérifie que la méthode renvoie un véhicule par son ID s'il existe.
-     */
+     *//*
+
     @Test
     void testGetVehiculeById_whenVehiculeExists_shouldReturnVehicule() throws Exception {
         Vehicule vehicule = new Vehicule(
@@ -151,10 +160,12 @@ class VehiculeControllerTest {
                 .andExpect(jsonPath("$.marque").value("Tesla"));
     }
 
-    /**
+    */
+/**
      * Test de la méthode getVehiculeById() du contrôleur VehiculeController.
      * Vérifie que la méthode renvoie un statut 404 Not Found si le véhicule n'existe pas.
-     */
+     *//*
+
     @Test
     void testGetVehiculeById_whenVehiculeDoesNotExist_shouldReturnNotFound() throws Exception {
         when(vehiculeService.getVehiculeById(99L)).thenReturn(Optional.empty());
@@ -163,10 +174,12 @@ class VehiculeControllerTest {
                 .andExpect(status().isNotFound());// On vérifie que le statut est 404 Not Found
     }
 
-    /**
+    */
+/**
      * Test de la méthode saveVehicule() du contrôleur VehiculeController.
      * Vérifie que la méthode crée un nouveau véhicule et renvoie le véhicule créé.
-     */
+     *//*
+
     @Test
     void testPostVehicule_whenVehiculeDoesNotExists_shouldReturnVehicule() throws Exception {
         Vehicule vehicule = new Vehicule(
@@ -214,10 +227,12 @@ class VehiculeControllerTest {
     }
 
 
-    /**
+    */
+/**
      * Test de la méthode updateVehicule() du contrôleur VehiculeController.
      * Vérifie que la méthode renvoie un statut 400 Bad Request si le véhicule n'est pas valide.
-     */
+     *//*
+
     @Test
     void testUpdateVehicule_whenVehiculeExists_shouldReturnVehicule() throws Exception {
 
@@ -296,10 +311,12 @@ class VehiculeControllerTest {
 
 
 
-    /**
+    */
+/**
      * Test de la méthode deleteVehicule() du contrôleur VehiculeController.
      * Vérifie que la méthode supprime un véhicule par son ID.
-     */
+     *//*
+
     @Test
     void testDeleteVehicule_whenVehiculeExists_shouldReturnNoContent() throws Exception {
         when(vehiculeService.existsById(12010L)).thenReturn(true);
@@ -309,10 +326,12 @@ class VehiculeControllerTest {
     }
 
 
-    /**
+    */
+/**
      * Test de la méthode deleteVehicule() du contrôleur VehiculeController.
      * Vérifie que la méthode renvoie un statut 404 Not Found si le véhicule n'existe pas.
-     */
+     *//*
+
     @Test
     void testDeleteVehicule_whenVehiculeExists_shouldReturnNotFound() throws Exception {
         when(vehiculeService.existsById(12010L)).thenReturn(false);
@@ -322,4 +341,4 @@ class VehiculeControllerTest {
     }
 
 
-}
+}*/

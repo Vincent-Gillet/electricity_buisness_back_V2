@@ -11,9 +11,4 @@ public class ElectricityBusinessBackendApplication {
 		SpringApplication.run(ElectricityBusinessBackendApplication.class, args);
 	}
 
-
-/*	@GetMapping("/")
-	public String home() {
-		return "Hello World!";
-	}*/
 }
